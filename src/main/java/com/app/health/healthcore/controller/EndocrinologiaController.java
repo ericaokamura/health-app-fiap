@@ -9,39 +9,39 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/usuarios")
 public class EndocrinologiaController {
 
     @Autowired
     private EndocrinologiaService service;
 
-    @GetMapping("/usuarios/{idUsuario}")
+    @GetMapping("/{idUsuario}")
     public ResponseEntity<UsuarioDTO> retornaDadosUsuario(@PathVariable("idUsuario") Long idUsuario) {
         return ResponseEntity.ok(service.retornaDadosUsuario(idUsuario));
     }
 
-    @PostMapping("/usuarios")
+    @PostMapping("/")
     public ResponseEntity<UsuarioDTO> gravaDadosUsuario(@RequestBody UsuarioDTO dto) {
         return ResponseEntity.ok(service.gravaDadosUsuario(dto));
     }
 
-    @PostMapping("/usuarios/{idUsuario}/endocrinologia")
+    @PostMapping("/{idUsuario}/dadosEndocrinologia")
     public ResponseEntity<UsuarioDTO> gravaDadosEndocrinologiaUsuario(@PathVariable("idUsuario") Long idUsuario, @RequestBody DadosEndocrinologiaDTO dto) {
         return ResponseEntity.ok(service.gravaDadosEndocrinologia(idUsuario, dto));
     }
 
-    @PutMapping("/usuarios/{idUsuario}/endocrinologia/{idDado}")
+    @PutMapping("/{idUsuario}/dadosEndocrinologia/{idDado}")
     public ResponseEntity<UsuarioDTO> atualizaDadosEndocrinologiaUsuario(@PathVariable("idUsuario") Long idUsuario, @PathVariable("idDado") Long idDado, @RequestBody DadosEndocrinologiaDTO dto) {
         return ResponseEntity.ok(service.atualizaDadosEndocrinologia(idUsuario, idDado, dto));
 
     }
 
-    @PostMapping("/usuarios/{idUsuario}/gerenciamentoInsulina")
+    @PostMapping("/{idUsuario}/gerenciamentoInsulina")
     public ResponseEntity<UsuarioDTO> gravaGerenciamentoInsulinaUsuario(@PathVariable("idUsuario") Long idUsuario, @RequestBody GerenciamentoInsulinaDTO dto) {
         return ResponseEntity.ok(service.gravaGerenciamentoInsulina(idUsuario, dto));
     }
 
-    @PutMapping("/usuarios/{idUsuario}/gerenciamentoInsulina/{idGerenciamento}")
+    @PutMapping("/{idUsuario}/gerenciamentoInsulina/{idGerenciamento}")
     public ResponseEntity<UsuarioDTO> atualizaGerenciamentoInsulinaUsuario(@PathVariable("idUsuario") Long idUsuario, @PathVariable("idGerenciamento") Long idGerenciamento, @RequestBody GerenciamentoInsulinaDTO dto) {
         return ResponseEntity.ok(service.atualizaGerenciamentoInsulina(idUsuario, idGerenciamento, dto));
     }

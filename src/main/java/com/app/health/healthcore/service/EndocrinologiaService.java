@@ -91,6 +91,7 @@ public class EndocrinologiaService {
         }
         Usuario user = usuario.get();
         DadosEndocrinologia entity = mapper.convertToModel(dto);
+        entity.setCriadoEm(LocalDateTime.now());
         entity.setUsuario(user);
         repository.save(entity);
         List<DadosEndocrinologia> dados = repository.findByUsuario(user);
@@ -126,6 +127,7 @@ public class EndocrinologiaService {
         }
         Usuario user = usuario.get();
         GerenciamentoInsulina entity = gerenciamentoInsulinaMapper.convertToModel(dto);
+        entity.setCriadoEm(LocalDateTime.now());
         entity.setUsuario(user);
         gerenciamentoInsulinaRepository.save(entity);
         List<DadosEndocrinologia> dados = repository.findByUsuario(user);
