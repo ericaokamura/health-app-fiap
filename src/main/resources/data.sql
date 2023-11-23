@@ -1,0 +1,1 @@
+INSERT INTO Usuario(ID, NOMECOMPLETO, EMAIL, PESO, ALTURA, IMC, IDADE) values (1, 'Erica Okamura', 'erica.okamura@yahoo.com.br', 120.00, 1.58, 48.00, 37);

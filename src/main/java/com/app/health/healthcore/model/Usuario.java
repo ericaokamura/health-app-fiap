@@ -13,13 +13,20 @@ import java.util.List;
 public class Usuario {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name = "ID")
     private Long id;
+    @Column(name = "NOMECOMPLETO")
     private String nomeCompleto;
+    @Column(name = "EMAIL")
     private String email;
+    @Column(name = "PESO")
     private Double peso;
+    @Column(name = "ALTURA")
     private Double altura;
+    @Column(name = "IMC")
     private Double imc;
+    @Column(name = "IDADE")
     private Integer idade;
     @OneToMany
     @Transient
