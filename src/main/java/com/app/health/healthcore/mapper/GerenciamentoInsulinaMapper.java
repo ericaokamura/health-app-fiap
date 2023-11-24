@@ -25,7 +25,7 @@ public class GerenciamentoInsulinaMapper {
     public GerenciamentoInsulinaDTO convertToDTO(GerenciamentoInsulina model) {
         GerenciamentoInsulinaDTO dto = new
                 GerenciamentoInsulinaDTO();
-        dto.setCriadoEm(model.getCriadoEm());
+        dto.setCriadoEm(model.getCriadoEm().toString());
         dto.setTipoInsulina(model.getTipoInsulina().name());
         dto.setPosologia(model.getPosologia());
         return dto;

@@ -29,7 +29,7 @@ public class DadosEndocrinologiaMapper {
 
     public DadosEndocrinologiaDTO convertToDTO(DadosEndocrinologia model) {
         DadosEndocrinologiaDTO dto = new DadosEndocrinologiaDTO();
-        dto.setCriadoEm(model.getCriadoEm());
+        dto.setCriadoEm(model.getCriadoEm().toString());
         dto.setNivelGlicose(model.getNivelGlicose());
         dto.setNivelHemoglobinaAc1(model.getNivelHemoglobinaAc1());
         return dto;

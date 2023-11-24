@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Setter
 public class GerenciamentoInsulinaDTO {
 
-    private LocalDateTime criadoEm;
+    private String criadoEm;
     private String tipoInsulina;
     private String posologia;
 }

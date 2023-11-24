@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @Setter
 public class DadosEndocrinologiaDTO {
 
-    private LocalDateTime criadoEm;
+    private String criadoEm;
     private Double nivelGlicose;
     private Double nivelHemoglobinaAc1;
 
